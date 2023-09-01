@@ -1,3 +1,20 @@
+/* CUSTOM-PROPS */
+:root {
+  --dark-blue: #202733;
+  --dark-grayish-blue: #313a48;
+  --grayish-blue: #4f5d74;
+  --light-cyan: #cee3e9;
+  --neon-green: #53ffaa;
+}
+
+:root[data-theme="dark"] {
+  --color-bg-body: var(--dark-blue);
+  --color-bg-card: var(--dark-grayish-blue);
+  --color-text-accent: var(--neon-green);
+  --color-text: var(--light-cyan);
+  --color-border: var(--grayish-blue);
+}
+
 /* GLOBAL */
 html {
   box-sizing: border-box;
@@ -17,7 +34,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Manrope", "Arial",sans-serif;
+  font-family: "Manrope", "Arial", sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
   line-height: normal;
@@ -30,8 +47,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
-
 /* AUTOFILL-STYLES */
 /*input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -47,7 +62,6 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px #fff inset;
 }*/
 
-
 /* PLACEHOLDER-STYLES */
 /*::-webkit-input-placeholder,
 ::-moz-placeholder,
@@ -56,7 +70,6 @@ select:-webkit-autofill:focus {
   color: rgba(52, 49, 61, 0.5);
   opacity: 1;
 }*/
-
 
 /* VISUALLY-HIDDEN */
 .visually-hidden {
@@ -70,7 +83,6 @@ select:-webkit-autofill:focus {
   overflow: hidden;
 }
 
-
 /* CONTAINER */
 .container {
   width: 100%;
@@ -81,18 +93,15 @@ select:-webkit-autofill:focus {
   margin-right: auto;
 }
 
-
 /* MAIN-CONTENT */
 .main-content {
   flex-grow: 1;
 }
 
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) {
-
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
 }
