@@ -31,16 +31,17 @@ html {
 body {
   display: flex;
   flex-direction: column;
+  text-align: center;
   height: 100%;
-  padding: 0;
+  padding: 1rem;
   margin: 0;
   font-family: "Manrope", "Arial", sans-serif;
   font-size: 1.5rem;
   font-weight: 800;
   line-height: normal;
   letter-spacing: -0.01606em;
-  background-color: #fff;
-  color: #222;
+  background-color: var(--color-bg-body);
+  color: var(--color-text);
 }
 
 img {
@@ -98,10 +99,107 @@ select:-webkit-autofill:focus {
   flex-grow: 1;
 }
 
+/* CARD */
+.card {
+  position: relative;
+  flex-shrink: 0;
+  margin: auto;
+  padding: 40px 24px 64px;
+  border-radius: 10px;
+  max-width: 33.75rem;
+  width: 100%;
+  background-color: var(--color-bg-card);
+  box-shadow: 30px 50px 80px 0px rgb(0, 0, 0, 0.1);
+}
+.card_heading {
+  margin-bottom: 24px;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.21606em;
+  color: var(--color-text-accent);
+  text-transform: uppercase;
+}
+
+.card-quote {
+  margin-bottom: 24px;
+}
+.card-divider {
+  width: 6px;
+  height: 16px;
+}
+
+/* DICE BUTTON */
+.dice-button {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -32px;
+  border: 0;
+  border-radius: 50%;
+  padding: 0;
+  width: 64px;
+  height: 64px;
+  line-height: 1;
+  background-color: var(--color-text-accent);
+  cursor: pointer;
+  transition: opacity ease 0.2s, filter ease 0.3s;
+}
+.dice-button:hover {
+  filter: drop-shadow(0px 0px 30px #53ffaa);
+}
+.dice-button:active {
+  opacity: 0.7;
+}
+.dice-button__icon {
+  width: 24px;
+  height: 24px;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2),
   only screen and (min--moz-device-pixel-ratio: 2),
   only screen and (-o-min-device-pixel-ratio: 2/1),
   only screen and (min-device-pixel-ratio: 2),
   only screen and (min-resolution: 192dpi),
   only screen and (min-resolution: 2dppx) {
+}
+
+@media only screen and (min-width: 23.4375em) {
+  body {
+    font-size: 1.75rem;
+    letter-spacing: -0.01875em;
+  }
+  .card {
+    padding: 48px 48px 72px;
+  }
+  .card_heading {
+    font-size: 0.8125rem;
+    font-weight: 800;
+    letter-spacing: 0.25538em;
+  }
+
+  .card-quote {
+    margin-bottom: 40px;
+  }
+
+  /* DICE BUTTON */
+  .dice-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -32px;
+    border: 0;
+    border-radius: 50%;
+    padding: 0;
+    width: 64px;
+    height: 64px;
+    line-height: 1;
+    background-color: var(--color-text-accent);
+    cursor: pointer;
+  }
+  .dice-button__icon {
+    width: 24px;
+    height: 24px;
+  }
 }
