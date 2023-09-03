@@ -98,6 +98,10 @@ select:-webkit-autofill:focus {
 .main-content {
   flex-grow: 1;
 }
+*:focus {
+  outline: 2px dashed var(--color-text-accent);
+  outline-offset: 3px;
+}
 
 /* CARD */
 .card {
