@@ -1,10 +1,12 @@
 function init() {
-  const generateAdviceButton = document.querySelector(
-    "#generate-advice-button"
-  );
+  const generateAdviceButton = document.querySelector("#generate-advice-button");
+  const elCardIndex = document.getElementById("card__index");
+  const elCardQuoteText = document.getElementById("card-quote-text");
   async function getRandomAdvice() {
     const apiUrl = "https://api.adviceslip.com/advice";
     let advice;
+    elCardIndex.innerHTML='...';
+    elCardQuoteText.innerHTML='Loading...'
     try {
       const response = await fetch(apiUrl);
       if (response.status === 200) {
@@ -20,8 +22,8 @@ function init() {
     return advice;
   }
   function displayAdvice(advice) {
-    document.getElementById("card__index").innerHTML = advice.slip.id;
-    document.getElementById("card-quote-text").innerHTML = advice.slip.advice;
+    elCardIndex.innerHTML = advice.slip.id;
+    elCardQuoteText.innerHTML = advice.slip.advice;
   }
   function documntKeyUpHandler(event) {
     if (
@@ -32,7 +34,7 @@ function init() {
     }
     getRandomAdvice();
   }
-  function generateAdviceButtonClickHandler(event) {
+  function generateAdviceButtonClickHandler() {
     getRandomAdvice();
   }
   if (generateAdviceButton) {
